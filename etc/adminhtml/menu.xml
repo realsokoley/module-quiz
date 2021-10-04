@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Sokoley_Quiz::root" title="Quiz" translate="title" module="Sokoley_Quiz" sortOrder="90" parent="Magento_Backend::marketing" resource="Sokoley_Quiz::root"/>
+        <add id="Sokoley_Quiz::quiz" title="Quiz" translate="title" module="Sokoley_Quiz" sortOrder="90" parent="Sokoley_Quiz::root" action="sokoley_quiz/quiz" resource="Sokoley_Quiz::quiz"/>
+        <add id="Sokoley_Quiz::question" title="Question" translate="title" module="Sokoley_Quiz" sortOrder="90" parent="Sokoley_Quiz::root" action="sokoley_quiz/question" resource="Sokoley_Quiz::question"/>
+        <add id="Sokoley_Quiz::questionvariant" title="Question Variant" translate="title" module="Sokoley_Quiz" sortOrder="90" parent="Sokoley_Quiz::root" action="sokoley_quiz/questionvariant" resource="Sokoley_Quiz::questionvariant"/>
+        <add id="Sokoley_Quiz::result" title="Result" translate="title" module="Sokoley_Quiz" sortOrder="90" parent="Sokoley_Quiz::root" action="sokoley_quiz/result" resource="Sokoley_Quiz::result"/>
+    </menu>
+</config>

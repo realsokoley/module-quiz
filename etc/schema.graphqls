@@ -1,0 +1,38 @@
+type Query {
+    quizTestResult(id: Int): quizTestResult @resolver(class: "Sokoley\\Quiz\\Model\\Resolver\\Result") @doc(description: "Test result")
+    quizTest(id: Int): quizTest @resolver(class: "Sokoley\\Quiz\\Model\\Resolver\\Test") @doc(description: "Test")
+}
+
+type quizTest {
+    id: Int
+    name: String
+    description: String
+    questions: [QuizTestQuestion]
+}
+
+type quizTestResult {
+    id: Int
+    title: String
+    description: String
+    products: [ProductInterface]
+}
+
+type QuizTestQuestion {
+    id: Int
+    title: String
+    type: String
+    variants: [QuizTestQuestionVariant]
+}
+
+type QuizTestQuestionVariant {
+    id: Int
+    title: String
+    description: String
+    image: String
+    result_weight: [QuizTestResultWeight]
+}
+
+type QuizTestResultWeight {
+    result_id: Int
+    weight: Int
+}

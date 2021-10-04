@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Sokoley\Quiz\Ui\DataProvider\Result\Form\DataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">Sokoley\Quiz\Ui\DataProvider\Result\Form\Modifier\Pool</argument>
+        </arguments>
+    </type>
+    <virtualType name="Sokoley\Quiz\Ui\DataProvider\Result\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="product_grid" xsi:type="array">
+                    <item name="class" xsi:type="string">Sokoley\Quiz\Ui\DataProvider\Result\Form\Modifier\ProductGrid</item>
+                    <item name="sortOrder" xsi:type="number">1</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

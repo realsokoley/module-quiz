@@ -1,0 +1,71 @@
+{
+    "sokoley_quiz": {
+        "column": {
+            "id": true,
+            "name": true,
+            "description": true,
+            "is_active": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "SOKOLEY_QUIZ_IS_ACTIVE": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "sokoley_quiz_question": {
+        "column": {
+            "id": true,
+            "quiz_id": true,
+            "title": true,
+            "description": true,
+            "type_view": true,
+            "position": true,
+            "weight": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "SOKOLEY_QUIZ_QUESTION_QUIZ_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "SOKOLEY_QUIZ_QUESTION_QUIZ_ID_SOKOLEY_QUIZ_ID": true
+        }
+    },
+    "sokoley_quiz_question_variant": {
+        "column": {
+            "id": true,
+            "quiz_question_id": true,
+            "title": true,
+            "description": true,
+            "image": true,
+            "related_results": true,
+            "position": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "SOKOLEY_QUIZ_QUESTION_VARIANT_QUIZ_QUESTION_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_612E6D94CE22CEA91B6C83271ECF1DE4": true
+        }
+    },
+    "sokoley_quiz_result": {
+        "column": {
+            "id": true,
+            "title": true,
+            "description": true,
+            "related_products": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

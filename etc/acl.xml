@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Sokoley_Quiz::root" title="Quiz" translate="title">
+                    <resource id="Sokoley_Quiz::quiz" title="Quiz Quiz" translate="title"/>
+                    <resource id="Sokoley_Quiz::question" title="Quiz Question" translate="title"/>
+                    <resource id="Sokoley_Quiz::questionvariant" title="Quiz Question Variant" translate="title"/>
+                    <resource id="Sokoley_Quiz::result" title="Quiz Result" translate="title"/>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Sokoley_Quiz::config" title="Sokoley Quiz" translate="title"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

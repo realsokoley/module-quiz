@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Sokoley\Quiz\Api\QuizRepositoryInterface" type="Sokoley\Quiz\Model\QuizRepository"/>
+    <preference for="Sokoley\Quiz\Api\QuestionRepositoryInterface" type="Sokoley\Quiz\Model\QuestionRepository"/>
+    <preference for="Sokoley\Quiz\Api\QuestionVariantRepositoryInterface" type="Sokoley\Quiz\Model\QuestionVariantRepository"/>
+    <preference for="Sokoley\Quiz\Api\ResultRepositoryInterface" type="Sokoley\Quiz\Model\ResultRepository"/>
+    <preference for="Sokoley\Quiz\Api\Data\QuizInterface" type="Sokoley\Quiz\Model\Quiz"/>
+    <preference for="Sokoley\Quiz\Api\Data\QuestionInterface" type="Sokoley\Quiz\Model\Question"/>
+    <preference for="Sokoley\Quiz\Api\Data\QuestionVariantInterface" type="Sokoley\Quiz\Model\QuestionVariant"/>
+    <preference for="Sokoley\Quiz\Api\Data\ResultInterface" type="Sokoley\Quiz\Model\Result"/>
+    <preference for="Sokoley\Quiz\Api\Data\QuizSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="Sokoley\Quiz\Api\Data\QuestionSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="Sokoley\Quiz\Api\Data\QuestionVariantSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="Sokoley\Quiz\Api\Data\ResultSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="Sokoley\Quiz\Api\ResultRegistryInterface" type="Sokoley\Quiz\Model\Result\Registry"/>
+    <preference for="Sokoley\Quiz\Api\Data\ResultGridProductInterface" type="Sokoley\Quiz\Model\Result\Product\GridProduct"/>
+    <type name="Magento\Framework\Model\Entity\RepositoryFactory">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="Sokoley\Quiz\Api\Data\QuizInterface" xsi:type="string">Sokoley\Quiz\Api\QuizRepositoryInterface</item>
+                <item name="Sokoley\Quiz\Api\Data\QuestionInterface" xsi:type="string">Sokoley\Quiz\Api\QuestionRepositoryInterface</item>
+                <item name="Sokoley\Quiz\Api\Data\QuestionVariantInterface" xsi:type="string">Sokoley\Quiz\Api\QuestionVariantRepositoryInterface</item>
+                <item name="Sokoley\Quiz\Api\Data\ResultInterface" xsi:type="string">Sokoley\Quiz\Api\ResultRepositoryInterface</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Sokoley\Quiz\Model\SearchCriteria\QuizCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="filters" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor</item>
+                <item name="sorting" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor</item>
+                <item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Sokoley\Quiz\Model\SearchCriteria\QuestionCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="filters" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor</item>
+                <item name="sorting" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor</item>
+                <item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Sokoley\Quiz\Model\SearchCriteria\QuestionVariantCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="filters" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor</item>
+                <item name="sorting" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor</item>
+                <item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Sokoley\Quiz\Model\SearchCriteria\ResultCollectionProcessor" type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">
+        <arguments>
+            <argument name="processors" xsi:type="array">
+                <item name="filters" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor</item>
+                <item name="sorting" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor</item>
+                <item name="pagination" xsi:type="object">Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Sokoley\Quiz\Model\QuizRepository">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Sokoley\Quiz\Model\SearchCriteria\QuizCollectionProcessor</argument>
+        </arguments>
+    </type>
+    <type name="Sokoley\Quiz\Model\QuestionRepository">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Sokoley\Quiz\Model\SearchCriteria\QuestionCollectionProcessor</argument>
+        </arguments>
+    </type>
+    <type name="Sokoley\Quiz\Model\QuestionVariantRepository">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Sokoley\Quiz\Model\SearchCriteria\QuestionVariantCollectionProcessor</argument>
+        </arguments>
+    </type>
+    <type name="Sokoley\Quiz\Model\ResultRepository">
+        <arguments>
+            <argument name="collectionProcessor" xsi:type="object">Sokoley\Quiz\Model\SearchCriteria\ResultCollectionProcessor</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sokoley_quiz_quiz_listing_data_source" xsi:type="string">Sokoley\Quiz\Model\ResourceModel\Quiz\Grid\Collection</item>
+                <item name="sokoley_quiz_question_listing_data_source" xsi:type="string">Sokoley\Quiz\Model\ResourceModel\Question\Grid\Collection</item>
+                <item name="sokoley_quiz_questionvariant_listing_data_source" xsi:type="string">Sokoley\Quiz\Model\ResourceModel\QuestionVariant\Grid\Collection</item>
+                <item name="sokoley_quiz_result_listing_data_source" xsi:type="string">Sokoley\Quiz\Model\ResourceModel\Result\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Sokoley\Quiz\Model\ResourceModel\Quiz\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sokoley_quiz</argument>
+            <argument name="eventPrefix" xsi:type="string">sokoley_quiz_quiz_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">quiz_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Sokoley\Quiz\Model\ResourceModel\Quiz</argument>
+        </arguments>
+    </type>
+    <type name="Sokoley\Quiz\Model\ResourceModel\Question\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sokoley_quiz_question</argument>
+            <argument name="eventPrefix" xsi:type="string">sokoley_quiz_question_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">question_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Sokoley\Quiz\Model\ResourceModel\Question</argument>
+        </arguments>
+    </type>
+    <type name="Sokoley\Quiz\Model\ResourceModel\QuestionVariant\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sokoley_quiz_question_variant</argument>
+            <argument name="eventPrefix" xsi:type="string">sokoley_quiz_questionvariant_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">questionvariant_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Sokoley\Quiz\Model\ResourceModel\QuestionVariant</argument>
+        </arguments>
+    </type>
+    <type name="Sokoley\Quiz\Model\ResourceModel\Result\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sokoley_quiz_result</argument>
+            <argument name="eventPrefix" xsi:type="string">sokoley_quiz_result_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">result_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Sokoley\Quiz\Model\ResourceModel\Result</argument>
+        </arguments>
+    </type>
+    <type name="Sokoley\Quiz\Model\Config\Source\QuestionTypeViewList">
+        <arguments>
+            <argument name="possibleTypes" xsi:type="array">
+                <item name="chooserWithImg" xsi:type="string">Chooser with images</item>
+                <item name="chooserWithoutImg" xsi:type="string">Chooser without images</item>
+                <item name="scrollbar" xsi:type="string">Scrollbar</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

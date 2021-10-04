@@ -1,0 +1,32 @@
+{
+  "name": "sokoley/module-quiz",
+  "type": "magento2-module",
+  "version": "2.3.0",
+  "description": "Magento 2 Quiz",
+  "authors": [
+    {
+      "name": "Sokoley",
+      "email": "sokoley@yandex.ru",
+      "role": "Developer"
+    }
+  ],
+  "keywords": [
+    "magento",
+    "quiz",
+    "tests"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Sokoley\\Quiz\\": ""
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://repo.magento.com"
+    }
+  ]
+}

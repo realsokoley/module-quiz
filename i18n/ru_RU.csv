@@ -1,0 +1,10 @@
+Result with selected id doesnt exist,Результата с выбранным id не существует
+Result doesnt match any products,Для результата нет соответствующих ему продуктов
+Product data filling exception,Неверно заполнено поле с продуктами
+Product with sku %1 doesnt exist,Продукта с артикулом %1 не существует
+Result id should be specified,Введите id результата который хотите получить
+Test with selected id doesnt exist,Теста с выбранным id не существует
+Selected test is not active,Выбранный тест отключен
+Test id should be specified,Введите id теста который хотите получить
+Test with id %1 doesnt have any questions,Для теста с id %1 не создано ни одного вопроса
+Question with id %1 doesnt have any variants,Для вопроса с id %1 не создано ни одного варианта ответа
