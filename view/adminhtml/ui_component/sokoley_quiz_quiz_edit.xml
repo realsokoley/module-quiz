@@ -9,11 +9,11 @@
     </argument>
     <settings>
         <buttons>
-            <button name="save_and_continue" class="Sokoley\Base\Block\Adminhtml\Component\Edit\SaveAndContinueButton"/>
-            <button name="save" class="Sokoley\Base\Block\Adminhtml\Component\Edit\SaveButton"/>
-            <button name="reset" class="Sokoley\Base\Block\Adminhtml\Component\Edit\ResetButton"/>
-            <button name="delete" class="Sokoley\Base\Block\Adminhtml\Component\Edit\DeleteButton"/>
-            <button name="back" class="Sokoley\Base\Block\Adminhtml\Component\Edit\BackButton"/>
+            <button name="save_and_continue" class="Sokoley\Quiz\Block\Adminhtml\Component\Edit\SaveAndContinueButton"/>
+            <button name="save" class="Sokoley\Quiz\Block\Adminhtml\Component\Edit\SaveButton"/>
+            <button name="reset" class="Sokoley\Quiz\Block\Adminhtml\Component\Edit\ResetButton"/>
+            <button name="delete" class="Sokoley\Quiz\Block\Adminhtml\Component\Edit\DeleteButton"/>
+            <button name="back" class="Sokoley\Quiz\Block\Adminhtml\Component\Edit\BackButton"/>
         </buttons>
         <namespace>sokoley_quiz_quiz_edit</namespace>
         <dataScope>data</dataScope>

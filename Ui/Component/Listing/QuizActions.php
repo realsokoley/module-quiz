@@ -6,7 +6,7 @@
  */
 namespace Sokoley\Quiz\Ui\Component\Listing;
 
-class QuizActions extends \Sokoley\Base\Ui\Component\Listing\Actions
+class QuizActions extends Actions
 {
     /** @var string */
     protected $route = 'sokoley_quiz';

@@ -9,11 +9,11 @@
     </argument>
     <settings>
         <buttons>
-            <button name="save_and_continue" class="Sokoley\Base\Block\Adminhtml\Component\Edit\SaveAndContinueButton"/>
-            <button name="save" class="Sokoley\Base\Block\Adminhtml\Component\Edit\SaveButton"/>
-            <button name="reset" class="Sokoley\Base\Block\Adminhtml\Component\Edit\ResetButton"/>
-            <button name="delete" class="Sokoley\Base\Block\Adminhtml\Component\Edit\DeleteButton"/>
-            <button name="back" class="Sokoley\Base\Block\Adminhtml\Component\Edit\BackButton"/>
+            <button name="save_and_continue" class="Sokoley\Quiz\Block\Adminhtml\Component\Edit\SaveAndContinueButton"/>
+            <button name="save" class="Sokoley\Quiz\Block\Adminhtml\Component\Edit\SaveButton"/>
+            <button name="reset" class="Sokoley\Quiz\Block\Adminhtml\Component\Edit\ResetButton"/>
+            <button name="delete" class="Sokoley\Quiz\Block\Adminhtml\Component\Edit\DeleteButton"/>
+            <button name="back" class="Sokoley\Quiz\Block\Adminhtml\Component\Edit\BackButton"/>
         </buttons>
         <namespace>sokoley_quiz_questionvariant_edit</namespace>
         <dataScope>data</dataScope>
@@ -136,7 +136,7 @@
                     <settings>
                         <required>false</required>
                         <uploaderConfig>
-                            <param xsi:type="url" name="url" path="sokoley_ui/image/upload">
+                            <param xsi:type="url" name="url" path="sokoley_quiz/image/upload">
                                 <param name="media_path">quiz</param>
                                 <param name="attribute_name">image</param>
                             </param>

@@ -9,7 +9,7 @@ namespace Sokoley\Quiz\Model\QuestionVariant;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Store\Model\StoreManagerInterface;
 use Sokoley\Quiz\Model\ResourceModel\QuestionVariant\CollectionFactory;
-use Sokoley\Ui\Helper\ImageHelper;
+use Sokoley\Quiz\Helper\ImageHelper;
 
 class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 {

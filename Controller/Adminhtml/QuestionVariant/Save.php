@@ -8,7 +8,7 @@ namespace Sokoley\Quiz\Controller\Adminhtml\QuestionVariant;
 
 use Magento\Framework\Exception\LocalizedException;
 use Sokoley\Quiz\Model\QuestionVariant\DataProvider;
-use Sokoley\Ui\Helper\ImageHelper;
+use Sokoley\Quiz\Helper\ImageHelper;
 
 class Save extends \Sokoley\Quiz\Controller\Adminhtml\QuestionVariant
 {
@@ -63,6 +63,7 @@ class Save extends \Sokoley\Quiz\Controller\Adminhtml\QuestionVariant
         if (isset($data[DataProvider::RELATED_RESULTS]) && is_array($data[DataProvider::RELATED_RESULTS])) {
             $data[DataProvider::RELATED_RESULTS] = implode(',', $data[DataProvider::RELATED_RESULTS]);
         }
+
         $entityId = $this->getRequest()->getParam('id');
         $entity = $this->entityFactory->create();
         if ($entityId) {
@@ -83,6 +84,7 @@ class Save extends \Sokoley\Quiz\Controller\Adminhtml\QuestionVariant
         }
 
         $data = $this->uploadImage($data, 'image');
+
         $entity->setData($data);
 
         try {
